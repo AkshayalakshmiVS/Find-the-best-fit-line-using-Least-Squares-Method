@@ -25,8 +25,39 @@ RegisterNumber:
 */
 ```
 
+```
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+
+x_mean=np.mean(x)
+y_mean=np.mean(y)
+num=0
+denom=0
+
+for i in range(len(x)):
+  num+=(x[i]-x_mean)*(y[i]-y_mean)
+  denom+=(x[i]-x_mean)**2
+
+m=num/denom
+
+b=y_mean-m*y_mean
+
+print(m,b)
+y_predicted=m*x+b
+print(y_predicted)
+
+plt.scatter(x,y)
+plt.plot(x,y_predicted,color='cyan')
+plt.show()
+```
+
 ## Output:
 ![best fit line](sam.png)
+![ML1](https://github.com/AkshayalakshmiVS/Find-the-best-fit-line-using-Least-Squares-Method/assets/128115963/f94e6bc8-8c4e-46a2-ab22-fb2e4a20bd16)
+
+
 
 
 ## Result:
